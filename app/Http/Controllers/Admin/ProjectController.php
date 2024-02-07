@@ -49,14 +49,15 @@ class ProjectController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Project $project)
     {
-        $project = Project::findOrFail($id);
+        // $project = Project::where('slug', $slug)->first();
+        // dd($project);
 
-        $data = [
-            'project'=> $project,
-        ];
-        return view('admin.project.show', $data);
+        // $data = [
+        //     'project'=> $project,
+        // ];
+        return view('admin.project.show', compact('project'));
     }
 
     /**
@@ -76,15 +77,16 @@ class ProjectController extends Controller
 
         $data['slug'] = Str::slug($data['title'], '-');
         $project->update($data);
-        
-        return redirect()->route('admin.projects.show', $project->id);
+
+        return redirect()->route('admin.projects.show', $project);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Project $project)
     {
-        //
+        $project->delete();
+        return redirect()->route('admin.projects.index')->with('message', "$project->title");
     }
 }

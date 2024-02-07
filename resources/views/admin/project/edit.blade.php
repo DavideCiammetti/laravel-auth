@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <form action="{{route('admin.projects.update', $project->id)}}" method="POST">
+    <form action="{{route('admin.projects.update', $project->slug)}}" method="POST">
         @csrf
         @method('PUT')
         {{-- title --}}

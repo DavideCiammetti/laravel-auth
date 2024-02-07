@@ -26,8 +26,8 @@ Route::middleware(['auth','verified'])->name('admin.')->prefix('admin')->group(f
     
         Route::get('/', [DashboardControllers::class, 'index'])->name('dashboard');
         
-        // route al resource controller per crud
-        Route::resource('projects', ProjectController::class);
+        // route al resource controller per crud parameters=serve per prendere slug al posto di id
+        Route::resource('projects', ProjectController::class)->parameters(['projects'=> 'project:slug']);
     });
 
 require __DIR__.'/auth.php';
