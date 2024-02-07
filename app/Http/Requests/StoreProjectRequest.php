@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class StoreProjectRequest extends FormRequest
 {
@@ -36,7 +37,7 @@ class StoreProjectRequest extends FormRequest
             'title.max'=> 'massimo 100 caratteri',
             'title.min'=> 'minimo 5 caratteri',
             'img.required'=> 'campo obbligatorio',
-            // 'img.image'=>'formato errato',
+            // 'img.extensions'=>'formato errato',
         ];
     }
 }
