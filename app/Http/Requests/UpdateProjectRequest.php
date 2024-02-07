@@ -34,7 +34,7 @@ class UpdateProjectRequest extends FormRequest
             'title.required'=> 'il titolo è obbligatorio',
             'title.max'=> 'massimo 100 caratteri',
             'title.min'=> 'minimo 5 caratteri',
-            'img.require'=> 'campo obbligatorio',
+            'img.required'=> 'campo obbligatorio',
             // 'img.image'=>'formato errato',
         ];
     }
