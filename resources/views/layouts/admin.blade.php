@@ -66,13 +66,13 @@
                             <li class="nav-item">
                                 <a class="nav-link text-white "
                                     href="{{ route('admin.projects.index') }}">
-                                    <i class="fa-solid fa-list"></i> list
+                                    <i class="fa-solid fa-list me-2"></i> list
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white "
                                     href="{{ route('admin.projects.create') }}">
-                                    <i class="fa-solid fa-plus"></i>Add project
+                                    <i class="fa-solid fa-plus me-2"></i>Add project
                                 </a>
                             </li>
                         </ul>
